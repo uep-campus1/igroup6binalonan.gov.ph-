@@ -78,10 +78,10 @@
         to { text-shadow: 0 0 20px #fff, 0 0 30px #ffcccc; }
     }
 
-    /* RETURN BUTTON */
-    .return-btn {
+    /* RETURN BUTTON (FIXED RIGHT SIDE) */
+    .exit-btn {
         position: absolute;
-        left: 20px;
+        right: 20px;
         top: 18px;
         background: white;
         color: maroon;
@@ -91,9 +91,10 @@
         border-radius: 6px;
         cursor: pointer;
         transition: 0.3s;
+        text-decoration: none;
     }
 
-    .return-btn:hover {
+    .exit-btn:hover {
         background: #ddd;
         transform: scale(1.05);
     }
@@ -145,14 +146,22 @@
         color: maroon;
         font-weight: bold;
     }
-
+ footer {
+        background: rgba(128, 0, 0, 0.9);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        margin-top: 20px;
+    }
 </style>
 </head>
 
 <body>
 
 <header>
-    <button class="return-btn" onclick="goBack()">Return</button>
+   <a href="https://uep-campus1.github.io/igroup6binalonan.gov.ph-/COURSE.html" class="exit-btn">Exit</a>
     <h1>Bachelor of Science in Business Administration</h1>
 </header>
 
@@ -201,9 +210,12 @@
 
 <script>
 function goBack() {
-    window.location.href = "file:///C:/Users/buent/Downloads/COURSE.html";
+    window.location.href = "https://uep-campus-group6-bsit1i.github.io/bsit-1I/COURSE.html";
 }
 </script>
+<footer>
+    <p>© 2026 University of Eastern Pangasinan|BSBA</p>
+</footer>
 
 </body>
 </html>

@@ -109,7 +109,6 @@
         transition: 0.3s;
         text-align: center;
         cursor: pointer;
-        text-decoration: none;
     }
 
     .card:hover {
@@ -120,7 +119,6 @@
         width: 100%;
         height: 150px;
         object-fit: cover;
-        display: block;
     }
 
     .card p {
@@ -136,6 +134,36 @@
         padding: 10px;
         margin-top: 20px;
     }
+
+    /* POPUP MODAL */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+    }
+
+    .modal img {
+        max-width: 80%;
+        max-height: 80%;
+        border-radius: 10px;
+        box-shadow: 0 0 20px black;
+    }
+
+    .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+    }
 </style>
 
 </head>
@@ -143,9 +171,9 @@
 
 <header>
     <h1>University of Eastern Pangasinan</h1>
-    <p>Courses Offered</p>
+    <p>Courses Offered </p>
 
-    <a href="https://uep-campus1.github.io/igroup6binalonan.gov.ph-/MOSADA,%20WEBPAGE.html" class="exit-btn">Exit</a>
+    <a href="https://uep-campus-group6-bsit1i.github.io/bsit-1I/MOSADA,%20WEBPAGE.html" class="exit-btn">Exit</a>
 </header>
 
 <div class="container">
@@ -154,43 +182,43 @@
 
     <div class="grid">
 
-        <a href="https://uep-campus1.github.io/igroup6binalonan.gov.ph-/BSIT.html" class="card">
-            <img src="IT.jpg" alt="BSIT">
+        <a href="https://uep-campus-group6-bsit1i.github.io/bsit-1I/BSIT.html" class="card">
+            <img src="IT.jpg">
             <p>Information Technology</p>
         </a>
 
-        <a href="https://uep-campus1.github.io/igroup6binalonan.gov.ph-/BSCE.html" class="card">
-            <img src="ENG.jpg" alt="BSCE">
+        <a href="https://uep-campus-group6-bsit1i.github.io/bsit-1I/BSCE.html" class="card">
+            <img src="ENG.jpg">
             <p>Civil Engineering</p>
         </a>
 
-        <a href="https://uep-campus1.github.io/igroup6binalonan.gov.ph-/BSHM.html" class="card">
-            <img src="HM.jpg" alt="BSHM">
+        <a href="https://uep-campus-group6-bsit1i.github.io/bsit-1I/BSHM.html" class="card">
+            <img src="HM.jpg">
             <p>Hospitality Management</p>
         </a>
 
-        <a href="https://uep-campus1.github.io/igroup6binalonan.gov.ph-/MIDWIFE.html" class="card">
-            <img src="Midw.jpg" alt="Midwifery">
+        <a href="https://uep-campus-group6-bsit1i.github.io/bsit-1I/MIDWIFE.html" class="card">
+            <img src="Midw.jpg">
             <p>Midwifery</p>
         </a>
 
-        <a href="https://uep-campus1.github.io/igroup6binalonan.gov.ph-/educ.html" class="card">
-            <img src="Ed.jpg" alt="Education">
+        <a href="https://uep-campus-group6-bsit1i.github.io/bsit-1I/educ.html" class="card">
+            <img src="Ed.jpg">
             <p>Education</p>
         </a>
 
-        <a href="https://uep-campus1.github.io/igroup6binalonan.gov.ph-/accountancy.html" class="card">
-            <img src="acc.jpg" alt="Accountancy">
+        <a href="https://uep-campus-group6-bsit1i.github.io/bsit-1I/accountancy.html" class="card">
+            <img src="acc.jpg">
             <p>Accountancy</p>
         </a>
 
-        <a href="https://uep-campus1.github.io/igroup6binalonan.gov.ph-/BSBA.html" class="card">
-            <img src="BE.jpg" alt="BSBA">
+        <a href="https://uep-campus-group6-bsit1i.github.io/bsit-1I/BSBA.html" class="card">
+            <img src="BE.jpg">
             <p>Business Administration</p>
         </a>
 
-        <a href="https://uep-campus1.github.io/igroup6binalonan.gov.ph-/CCJE.html" class="card">
-            <img src="CCJE.jpg" alt="Criminology">
+        <a href="https://uep-campus-group6-bsit1i.github.io/bsit-1I/CCJE.html" class="card">
+            <img src="CCJE.jpg">
             <p>Criminology</p>
         </a>
 
@@ -198,8 +226,25 @@
 </div>
 
 <footer>
-    <p>© 2026 University of Eastern Pangasinan | COURSE</p>
+    <p>© 2026 University of Eastern Pangasinan|COURSE</p>
 </footer>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modalImg">
+</div>
+
+<script>
+function openModal(imgSrc) {
+    document.getElementById("modal").style.display = "flex";
+    document.getElementById("modalImg").src = imgSrc;
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+</script>
 
 </body>
 </html>

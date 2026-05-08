@@ -78,10 +78,10 @@
         to { text-shadow: 0 0 20px #fff, 0 0 30px #ffcccc; }
     }
 
-    /* RETURN BUTTON */
-    .return-btn {
+    /* RETURN BUTTON FIXED RIGHT */
+    .exit-btn {
         position: absolute;
-        left: 20px;
+        right: 20px;
         top: 18px;
         background: white;
         color: maroon;
@@ -91,9 +91,10 @@
         border-radius: 6px;
         cursor: pointer;
         transition: 0.3s;
+        text-decoration: none;
     }
 
-    .return-btn:hover {
+    .exit-btn:hover {
         background: #ddd;
         transform: scale(1.05);
     }
@@ -146,13 +147,23 @@
         font-weight: bold;
     }
 
+    /* FOOTER */
+    footer {
+        background: rgba(128, 0, 0, 0.9);
+        color: white;
+        text-align: center;
+        padding: 15px;
+        font-size: 16px;
+        margin-top: 30px;
+    }
+
 </style>
 </head>
 
 <body>
 
 <header>
-    <button class="return-btn" onclick="goBack()">Return</button>
+    <a href="https://uep-campus1.github.io/igroup6binalonan.gov.ph-/COURSE.html" class="exit-btn">Exit</a>
     <h1>Bachelor of Science in Information Technology (BSIT)</h1>
 </header>
 
@@ -195,9 +206,13 @@
 
 </div>
 
+<footer>
+    <p>© 2026 Bachelor of Science in Information Technology (BSIT)</p>
+</footer>
+
 <script>
 function goBack() {
-    window.location.href = "file:///C:/Users/buent/Downloads/COURSE.html";
+    window.location.href = "https://uep-campus1.github.io/igroup6binalonan.gov.ph-/COURSE.html";
 }
 </script>
 

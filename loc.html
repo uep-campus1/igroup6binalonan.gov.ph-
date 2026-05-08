@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UEP Location</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: url("uep.jpg") no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    /* DARK OVERLAY */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: -1;
+    }
+
+    header {
+        background: #800000;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        position: relative;
+    }
+
+    header h1 {
+        margin: 0;
+        animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+        from { text-shadow: 0 0 5px white; }
+        to { text-shadow: 0 0 15px #ffcccc; }
+    }
+
+    .exit-btn {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        background: white;
+        color: #800000;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .exit-btn:hover {
+        background: #f2f2f2;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 30px auto;
+        padding: 60px;
+    }
+
+    .card {
+        background: rgba(255,255,255,0.95);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        border-left: 6px solid #800000;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+        color: #800000;
+        text-align: center;
+    }
+
+    iframe {
+        width: 100%;
+        height: 350px;
+        border: none;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+
+    footer {
+        background: #800000;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        margin-top: 20px;
+    }
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>University of Eastern Pangasinan</h1>
+
+    <a href="file:///C:/Users/buent/OneDrive/Desktop/MOSADA,%20WEBPAGE/MOSADA,%20WEBPAGE.html" class="exit-btn">
+        Exit
+    </a>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Our Location</h2>
+
+        <p style="text-align:center; font-size: 18px; line-height: 1.6;">
+            University of Eastern Pangasinan is located in Binalonan, Pangasinan, Philippines.
+        </p>
+
+        <!-- GOOGLE MAPS -->
+        <iframe 
+            src="https://www.google.com/maps?q=University+of+Eastern+Pangasinan&output=embed">
+        </iframe>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 University of Eastern Pangasinan | LOCATION</p>
+</footer>
+
+</body>
+</html>

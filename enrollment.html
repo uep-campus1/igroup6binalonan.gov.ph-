@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Enrollment Form</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("uep.jpg") no-repeat center center/cover;
+        filter: blur(7px);
+        transform: scale(1.1);
+        z-index: -1;
+    }
+
+    .header {
+        background: maroon;
+        color: white;
+        padding: 15px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .header button {
+        background: white;
+        color: maroon;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        font-weight: bold;
+        border-radius: 6px;
+    }
+
+    .container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-y: auto;
+        padding: 20px;
+    }
+
+    .form-box {
+        background: rgba(255, 255, 255, 0.97);
+        padding: 30px;
+        width: 650px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0; transform: translateY(20px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+
+    h2 {
+        text-align: center;
+        color: maroon;
+        margin-bottom: 20px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        outline: none;
+    }
+
+    input:focus {
+        border-color: maroon;
+        box-shadow: 0 0 5px rgba(128,0,0,0.5);
+    }
+
+    .btn-group {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+    }
+
+    button {
+        width: 48%;
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .submit-btn {
+        background: maroon;
+        color: white;
+    }
+
+    .clear-btn {
+        background: #ccc;
+    }
+
+    #message {
+        display: none;
+        font-size: 20px;
+        font-weight: bold;
+        color: green;
+        text-align: center;
+    }
+
+    #error {
+        display: none;
+        color: red;
+        text-align: center;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    footer {
+        background: #800000;
+        color: white;
+        text-align: center;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    ENROLLMENT FORM
+    <button onclick="goReturn()">Return</button>
+</div>
+
+<div class="container">
+
+<div class="form-box">
+
+    <div id="formDiv">
+        <h2>Student Enrollment Form</h2>
+
+        <div class="grid">
+            <input type="text" id="studentid" placeholder="Student ID / LRN">
+            <input type="text" id="name" placeholder="Full Name">
+
+            <input type="number" id="age" placeholder="Age">
+            <input type="date" id="birthday">
+
+            <input type="text" id="gender" placeholder="Gender">
+            <input type="text" id="civil" placeholder="Civil Status">
+
+            <input type="text" id="course" placeholder="Course (e.g. BSIT)">
+            <input type="text" id="year" placeholder="Year Level">
+
+            <input type="text" id="address" placeholder="Address">
+            <input type="email" id="email" placeholder="Email">
+
+            <input type="text" id="contact" placeholder="Contact Number">
+            <input type="text" id="school" placeholder="Previous School">
+
+            <input type="text" id="guardian" placeholder="Guardian Name">
+            <input type="text" id="gcontact" placeholder="Guardian Contact">
+        </div>
+
+        <div class="btn-group">
+            <button class="submit-btn" onclick="submitForm()">Submit</button>
+            <button class="clear-btn" onclick="resetForm()">Clear</button>
+        </div>
+
+        <div id="error">Please fill out all fields!</div>
+    </div>
+
+    <div id="message">
+        🎉 Successfully Enrolled!
+    </div>
+
+</div>
+
+</div>
+
+<script>
+function submitForm() {
+
+    let fields = [
+        "studentid","name","age","birthday","gender","civil",
+        "course","year","address","email","contact",
+        "school","guardian","gcontact"
+    ];
+
+    for (let i of fields) {
+        if (document.getElementById(i).value === "") {
+            document.getElementById("error").style.display = "block";
+            return;
+        }
+    }
+
+    document.getElementById("error").style.display = "none";
+    document.getElementById("formDiv").style.display = "none";
+    document.getElementById("message").style.display = "block";
+
+    setTimeout(() => {
+        resetForm();
+    }, 2500);
+}
+
+function resetForm() {
+
+    let fields = [
+        "studentid","name","age","birthday","gender","civil",
+        "course","year","address","email","contact",
+        "school","guardian","gcontact"
+    ];
+
+    for (let i of fields) {
+        document.getElementById(i).value = "";
+    }
+
+    document.getElementById("formDiv").style.display = "block";
+    document.getElementById("message").style.display = "none";
+    document.getElementById("error").style.display = "none";
+}
+
+function goReturn() {
+    window.location.href = "file:///C:/Users/buent/OneDrive/Desktop/MOSADA,%20WEBPAGE/MOSADA,%20WEBPAGE.html";
+}
+</script>
+
+<footer>
+    <p>© 2026 University of Eastern Pangasinan | Enrollment System</p>
+</footer>
+
+</body>
+</html>

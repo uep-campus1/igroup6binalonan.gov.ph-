@@ -16,7 +16,6 @@
         overflow-x: hidden;
     }
 
-    /* BACKGROUND IMAGE WITH BLUR */
     body::before {
         content: "";
         position: fixed;
@@ -30,7 +29,6 @@
         z-index: -2;
     }
 
-    /* DARK OVERLAY */
     body::after {
         content: "";
         position: fixed;
@@ -40,7 +38,6 @@
         z-index: -1;
     }
 
-    /* HEADER */
     header {
         background: rgba(128, 0, 0, 0.9);
         color: white;
@@ -52,7 +49,6 @@
         overflow: hidden;
     }
 
-    /* HEADER SHINE EFFECT */
     header::after {
         content: "";
         position: absolute;
@@ -78,10 +74,9 @@
         to { text-shadow: 0 0 20px #fff, 0 0 30px #ffcccc; }
     }
 
-    /* RETURN BUTTON */
-    .return-btn {
+    .exit-btn {
         position: absolute;
-        left: 20px;
+        right: 20px;
         top: 18px;
         background: white;
         color: maroon;
@@ -91,14 +86,14 @@
         border-radius: 6px;
         cursor: pointer;
         transition: 0.3s;
+        text-decoration: none;
     }
 
-    .return-btn:hover {
+    .exit-btn:hover {
         background: #ddd;
         transform: scale(1.05);
     }
 
-    /* MAIN CONTAINER */
     .container {
         display: flex;
         justify-content: center;
@@ -108,7 +103,6 @@
         flex-wrap: wrap;
     }
 
-    /* IMAGE */
     .image-box img {
         width: 420px;
         height: 320px;
@@ -122,7 +116,6 @@
         transform: scale(1.08);
     }
 
-    /* TEXT BOX */
     .text-box {
         width: 520px;
         background: rgba(255,255,255,0.95);
@@ -146,24 +139,31 @@
         font-weight: bold;
     }
 
+    /* FOOTER */
+    footer {
+        margin-top: 40px;
+        background: rgba(128, 0, 0, 0.9);
+        color: white;
+        text-align: center;
+        padding: 15px;
+        font-size: 16px;
+    }
 </style>
 </head>
 
 <body>
 
 <header>
-    <button class="return-btn" onclick="goBack()">Return</button>
+    <a href="https://uep-campus1.github.io/igroup6binalonan.gov.ph-/COURSE.html" class="exit-btn">Exit</a>
     <h1>Bachelor of Science in Accountancy</h1>
 </header>
 
 <div class="container">
 
-    <!-- IMAGE -->
     <div class="image-box">
         <img src="acc.jpg" alt="Accountancy Image">
     </div>
 
-    <!-- DESCRIPTION -->
     <div class="text-box">
 
         <h2>About the Course</h2>
@@ -199,9 +199,13 @@
 
 </div>
 
+<footer>
+    Bachelor of Science in Accountancy (BSA) • University Course Information
+</footer>
+
 <script>
 function goBack() {
-    window.location.href = "file:///C:/Users/buent/Downloads/COURSE.html";
+    window.location.href = "https://uep-campus1.github.io/igroup6binalonan.gov.ph-/COURSE.html";
 }
 </script>
 

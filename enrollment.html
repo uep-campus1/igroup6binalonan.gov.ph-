@@ -49,6 +49,12 @@
         cursor: pointer;
         font-weight: bold;
         border-radius: 6px;
+        transition: 0.3s;
+    }
+
+    .header button:hover {
+        background: #f2f2f2;
+        transform: scale(1.05);
     }
 
     .container {
@@ -70,8 +76,14 @@
     }
 
     @keyframes fadeIn {
-        from {opacity: 0; transform: translateY(20px);}
-        to {opacity: 1; transform: translateY(0);}
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     h2 {
@@ -154,6 +166,7 @@
 
 <div class="header">
     ENROLLMENT FORM
+
     <button onclick="goReturn()">Return</button>
 </div>
 
@@ -204,6 +217,7 @@
 </div>
 
 <script>
+
 function submitForm() {
 
     let fields = [
@@ -213,7 +227,9 @@ function submitForm() {
     ];
 
     for (let i of fields) {
+
         if (document.getElementById(i).value === "") {
+
             document.getElementById("error").style.display = "block";
             return;
         }
@@ -224,7 +240,9 @@ function submitForm() {
     document.getElementById("message").style.display = "block";
 
     setTimeout(() => {
+
         resetForm();
+
     }, 2500);
 }
 
@@ -237,6 +255,7 @@ function resetForm() {
     ];
 
     for (let i of fields) {
+
         document.getElementById(i).value = "";
     }
 
@@ -246,8 +265,10 @@ function resetForm() {
 }
 
 function goReturn() {
-    window.location.href = "https://uep-campus1.github.io/igroup6binalonan.gov.ph-/MOSADA,%20WEBPAGE.html";
+
+    window.location.href = "https://uep-campus-group6-bsit1i.github.io/bsit-1I/MOSADA,%20WEBPAGE.html";
 }
+
 </script>
 
 <footer>

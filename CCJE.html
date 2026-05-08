@@ -52,7 +52,6 @@
         overflow: hidden;
     }
 
-    /* HEADER SHINE EFFECT */
     header::after {
         content: "";
         position: absolute;
@@ -78,10 +77,10 @@
         to { text-shadow: 0 0 20px #fff, 0 0 30px #ffcccc; }
     }
 
-    /* RETURN BUTTON */
-    .return-btn {
+    /* EXIT BUTTON */
+    .exit-btn {
         position: absolute;
-        left: 20px;
+        right: 20px;
         top: 18px;
         background: white;
         color: maroon;
@@ -91,9 +90,10 @@
         border-radius: 6px;
         cursor: pointer;
         transition: 0.3s;
+        text-decoration: none;
     }
 
-    .return-btn:hover {
+    .exit-btn:hover {
         background: #ddd;
         transform: scale(1.05);
     }
@@ -108,7 +108,6 @@
         flex-wrap: wrap;
     }
 
-    /* IMAGE */
     .image-box img {
         width: 420px;
         height: 320px;
@@ -122,7 +121,6 @@
         transform: scale(1.08);
     }
 
-    /* TEXT BOX */
     .text-box {
         width: 520px;
         background: rgba(255,255,255,0.95);
@@ -146,24 +144,31 @@
         font-weight: bold;
     }
 
+    /* FOOTER */
+    footer {
+        margin-top: 40px;
+        background: rgba(128, 0, 0, 0.9);
+        color: white;
+        text-align: center;
+        padding: 15px;
+        font-size: 16px;
+    }
 </style>
 </head>
 
 <body>
 
 <header>
-    <button class="return-btn" onclick="goBack()">Return</button>
+    <a href="https://uep-campus1.github.io/igroup6binalonan.gov.ph-/COURSE.html" class="exit-btn">Exit</a>
     <h1>Bachelor of Science in Criminology</h1>
 </header>
 
 <div class="container">
 
-    <!-- IMAGE -->
     <div class="image-box">
         <img src="CCJE.jpg" alt="Criminology Image">
     </div>
 
-    <!-- DESCRIPTION -->
     <div class="text-box">
 
         <h2>About the Course</h2>
@@ -200,11 +205,10 @@
 
 </div>
 
-<script>
-function goBack() {
-    window.location.href = "file:///C:/Users/buent/Downloads/COURSE.html";
-}
-</script>
+<!-- FOOTER ADDED HERE -->
+<footer>
+    Bachelor of Science in Criminology (BSCRIM) • University Course Information
+</footer>
 
 </body>
 </html>
